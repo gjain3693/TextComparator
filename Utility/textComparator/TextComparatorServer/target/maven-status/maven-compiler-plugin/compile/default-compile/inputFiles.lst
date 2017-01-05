@@ -1,0 +1,14 @@
+/home/gauravpj/workspace/MigrationAutomation/textComparator/TextComparatorServer/src/main/java/io/swagger/model/ResponseFileData.java
+/home/gauravpj/workspace/MigrationAutomation/textComparator/TextComparatorServer/src/main/java/io/swagger/api/JacksonJsonProvider.java
+/home/gauravpj/workspace/MigrationAutomation/textComparator/TextComparatorServer/src/main/java/io/swagger/api/NotFoundException.java
+/home/gauravpj/workspace/MigrationAutomation/textComparator/TextComparatorServer/src/main/java/io/swagger/api/factories/CompareTextApiServiceFactory.java
+/home/gauravpj/workspace/MigrationAutomation/textComparator/TextComparatorServer/src/main/java/io/swagger/api/impl/CompareTextApiServiceImpl.java
+/home/gauravpj/workspace/MigrationAutomation/textComparator/TextComparatorServer/src/main/java/io/swagger/api/CompareTextApi.java
+/home/gauravpj/workspace/MigrationAutomation/textComparator/TextComparatorServer/src/main/java/io/swagger/api/RFC3339DateFormat.java
+/home/gauravpj/workspace/MigrationAutomation/textComparator/TextComparatorServer/src/main/java/io/swagger/api/ApiResponseMessage.java
+/home/gauravpj/workspace/MigrationAutomation/textComparator/TextComparatorServer/src/main/java/io/swagger/api/CompareTextApiService.java
+/home/gauravpj/workspace/MigrationAutomation/textComparator/TextComparatorServer/src/main/java/io/swagger/api/ApiOriginFilter.java
+/home/gauravpj/workspace/MigrationAutomation/textComparator/TextComparatorServer/src/main/java/io/swagger/model/FileData.java
+/home/gauravpj/workspace/MigrationAutomation/textComparator/TextComparatorServer/src/main/java/io/swagger/api/Bootstrap.java
+/home/gauravpj/workspace/MigrationAutomation/textComparator/TextComparatorServer/src/main/java/io/swagger/api/StringUtil.java
+/home/gauravpj/workspace/MigrationAutomation/textComparator/TextComparatorServer/src/main/java/io/swagger/api/ApiException.java
