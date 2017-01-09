@@ -14,12 +14,34 @@
   <name>TextComparatorUI Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
+  <dependency>
+      <groupId>com.utility.comparator</groupId>
+    <artifactId>TextComparatorClient</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <scope>system</scope>
+   <systemPath>${basedir}/lib/TextComparatorClient-0.0.1-SNAPSHOT.war</systemPath>
+  </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+   <dependency>
+  <groupId>javax.servlet</groupId>
+  <artifactId>javax.servlet-api</artifactId>
+  <version>3.1.0</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
+
+    
   </dependencies>
   <build>
     <finalName>TextComparatorUI</finalName>
