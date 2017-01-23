@@ -24,41 +24,57 @@ public class CompareTextApiServiceImpl extends CompareTextApiService {
     String fileTwo;
     List<String> updatedFile = new ArrayList<>();
 
-    Boolean compareResult;
-    // do some magic!
+    Boolean isFirstFileSizeGreater=false;
+    int counterSize=0;
+    int counterCondition=0;
+
     ResponseFileData responseFileData = new ResponseFileData();
 
-    int count=0;
-    String latestRecord;
-    fileOne=body.getFileOneData();
-    fileTwo=body.getFileTwoData();
-
-    List <String> fileOneList=new  ArrayList<String>(Arrays.asList(fileOne.split("\n")));
-    List <String> fileTwoList=new ArrayList<String>(Arrays.asList(fileTwo.split("\n")));
     try{
-      compareResult=fileOne.equals(fileTwo);
+      String latestRecord;
+      fileOne=body.getFileOneData();
+      fileTwo=body.getFileTwoData();
 
-      if(compareResult==false) {
-	for(String fileContent:fileOneList) {
-	  updatedFile.add(fileTwoList.contains(fileContent)?fileTwoList.get(count):fileTwoList.get(count)+"<--");
-	  count++;
+      List <String> fileOneList=new  ArrayList<String>(Arrays.asList(fileOne.split("\n")));
+      List <String> fileTwoList=new ArrayList<String>(Arrays.asList(fileTwo.split("\n")));
+
+      if(fileOneList.size()>=fileTwoList.size()){
+	isFirstFileSizeGreater=true;
+	counterSize=fileOneList.size();
+	counterCondition=fileTwoList.size();
+      } else  {
+	isFirstFileSizeGreater=false;
+	counterSize=fileTwoList.size();
+	counterCondition=fileOneList.size();
+      }
+
+      for(int counter=0;counter<counterSize;counter++) {
+	if (counter <= counterCondition-1) {
+	  if(fileTwoList.get(counter).equals(fileOneList.get(counter))) {
+	    updatedFile.add(counter,fileTwoList.get(counter));
+	  } else {
+	    updatedFile.add(counter,fileTwoList.get(counter)+"<---");
+	  }
+	} else {
+	  updatedFile.add((isFirstFileSizeGreater?"":fileTwoList.get(counter))+"<---");
 	}
-	latestRecord=StringUtils.join(updatedFile,"\n");
+      }
 
-	responseFileData.setFileOneData(fileOne);
-	responseFileData.setFileTwoData(latestRecord);
-	responseFileData.setResponseCode(200);
-	responseFileData.setResponseMessage("SUCESSFULL DONE");
-      }
-      else
-      {
-	System.out.println("FILE HAS NO DIFFERENCE");
-      }
+
+      latestRecord=StringUtils.join(updatedFile,"\n");
+      System.out.println(latestRecord);
+      responseFileData.setFileOneData(fileOne);
+      responseFileData.setFileTwoData(latestRecord);
+      responseFileData.setResponseCode(200);
+      responseFileData.setResponseMessage("SUCESSFULL DONE");
+
     } catch(Exception ex) {
       ex.printStackTrace();
     }
 
     return Response.ok().entity(responseFileData).build();
   }
+
+
 
 }

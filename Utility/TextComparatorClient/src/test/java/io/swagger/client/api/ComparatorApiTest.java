@@ -27,10 +27,10 @@ package io.swagger.client.api;
 
 import org.junit.Test;
 
-import com.utility.comparator.api.ComparatorApi;
 import com.utility.comparator.client.ApiException;
-import com.utility.comparator.model.FileData;
-import com.utility.comparator.model.ResponseFileData;
+import com.utility.comparator.client.api.ComparatorApi;
+import com.utility.comparator.client.model.FileData;
+import com.utility.comparator.client.model.ResponseFileData;
 
 import java.util.ArrayList;
 import java.util.HashMap;

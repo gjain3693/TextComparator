@@ -1,49 +1,72 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.utility.comparator</groupId>
-    <artifactId>textComparator</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.utility.comparator</groupId>
+		<artifactId>textComparator</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
 
-  <artifactId>TextComparatorUI</artifactId>
-  
-  <packaging>war</packaging>
-  <name>TextComparatorUI Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  <dependencies>
-  <dependency>
-      <groupId>com.utility.comparator</groupId>
-    <artifactId>TextComparatorClient</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <scope>system</scope>
-   <systemPath>${basedir}/lib/TextComparatorClient-0.0.1-SNAPSHOT.war</systemPath>
-  </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
-   <dependency>
-  <groupId>javax.servlet</groupId>
-  <artifactId>javax.servlet-api</artifactId>
-  <version>3.1.0</version>
-</dependency>
+	<artifactId>TextComparatorUI</artifactId>
 
-<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
-<dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>jstl</artifactId>
-    <version>1.2</version>
-</dependency>
+	<packaging>war</packaging>
+	<name>TextComparatorUI Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>com.utility.comparator</groupId>
+			<artifactId>TextComparatorClient</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>war</type>
+			<classifier>classes</classifier>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
 
-    
-  </dependencies>
-  <build>
-    <finalName>TextComparatorUI</finalName>
-  </build>
+		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+
+	</dependencies>
+	<build>
+		<finalName>TextComparatorUI</finalName>
+		
+		<plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-war-plugin</artifactId>
+      <configuration>
+        <webResources>
+          <resource>
+            <directory>${basedir}/src/main/java</directory>
+            <filtering>true</filtering>
+          </resource>
+        </webResources>
+        <overlays>
+          <overlay/>
+          <overlay>
+            <groupId>net.pascalalma.adapters</groupId>
+            <artifactId>my-adapter</artifactId>
+          </overlay>
+        </overlays>
+      </configuration>
+    </plugin>
+  </plugins>
+	</build>
 </project>

@@ -38,10 +38,10 @@ import com.squareup.okhttp.Headers;
 import com.squareup.okhttp.internal.http.HttpMethod;
 import com.squareup.okhttp.logging.HttpLoggingInterceptor;
 import com.squareup.okhttp.logging.HttpLoggingInterceptor.Level;
-import com.utility.comparator.auth.ApiKeyAuth;
-import com.utility.comparator.auth.Authentication;
-import com.utility.comparator.auth.HttpBasicAuth;
-import com.utility.comparator.auth.OAuth;
+import com.utility.comparator.client.auth.ApiKeyAuth;
+import com.utility.comparator.client.auth.Authentication;
+import com.utility.comparator.client.auth.HttpBasicAuth;
+import com.utility.comparator.client.auth.OAuth;
 
 import java.lang.reflect.Type;
 
